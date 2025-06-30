@@ -17,89 +17,112 @@
   <body>
     <!-- header -->
     <header class="header">
-      <div class="header__logo-wrapper">
-        <a class="header__logo" href="/">
-          <img
-            class="header__logo-img"
-            src="assets//icons/forma.svg"
-            alt="Logo"
-          />
-          FORMA'SINT.
-        </a>
-        <span class="header__logo-desktop-tagline">IDOMODS &lt;/&gt;</span>
-      </div>
+      <div class="header__topbar">
+        <div class="header__logo-wrapper">
+          <a class="header__logo" href="/">
+            <img
+              class="header__logo-img"
+              src="assets//icons/forma.svg"
+              alt="Logo"
+            />
+            FORMA'SINT.
+          </a>
+          <span class="header__logo-desktop-tagline">IDOMODS &lt;/&gt;</span>
+        </div>
 
-      <!-- mobile nav/sidebar, menu button -->
-      <button
-        class="header__mobile-nav-button"
-        aria-controls="mobile-navigation"
-        aria-expanded="true"
-        aria-label="toggle mobile menu"
-      >
-        <!-- hidden true na img i puste alt, ponieważ nie ma sensu wstawiać tego bo czytnik ekranu i tak widzi napis "MENU"  -->
-        <img
-          class="header__nav-button-icon"
-          src="/assets/icons/burger.svg"
-          alt=""
-          aria-hidden="true"
-        />
-        MENU
-      </button>
-      <aside
-        id="mobile-navigation"
-        class="header__sidebar"
-        role="navigation"
-        aria-label="Mobile navigation"
-      >
-        <nav class="header__mobile-nav">
-          <div class="header__mobile-nav-topbar">
-            <img src="assets/icons/forma.svg" alt="forma'sint logo" />
-            <button
-              class="header__mobile-nav-button"
-              aria-label="Close mobile menu"
-            >
-              <img
-                class="header__mobile-nav-button-icon"
-                src="/assets/icons/close.svg"
-                alt=""
-                aria-hidden="true"
-              />
-              CLOSE
-            </button>
-          </div>
-          <ul class="header__mobile-nav-list">
-            <li class="header__mobile-nav-item"><a href="#">HOME</a></li>
-            <li class="header__mobile-nav-item">
+        <!-- mobile nav/sidebar, menu button -->
+        <button
+          class="header__mobile-nav-button"
+          aria-controls="mobile-navigation"
+          aria-expanded="true"
+          aria-label="toggle mobile menu"
+        >
+          <!-- hidden true na img i puste alt, ponieważ nie ma sensu wstawiać tego bo czytnik ekranu i tak widzi napis "MENU"  -->
+          <img
+            class="header__nav-button-icon"
+            src="/assets/icons/burger.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          MENU
+        </button>
+        <aside
+          id="mobile-navigation"
+          class="header__sidebar"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
+          <nav class="header__mobile-nav">
+            <div class="header__mobile-nav-topbar">
+              <img src="assets/icons/forma.svg" alt="forma'sint logo" />
+              <button
+                class="header__mobile-nav-button"
+                aria-label="Close mobile menu"
+              >
+                <img
+                  class="header__mobile-nav-button-icon"
+                  src="/assets/icons/close.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
+                CLOSE
+              </button>
+            </div>
+            <ul class="header__mobile-nav-list">
+              <li class="header__mobile-nav-item"><a href="#">HOME</a></li>
+              <li class="header__mobile-nav-item">
+                <a href="#featured-products">FEATURED PRODUCTS</a>
+              </li>
+              <li class="header__mobile-nav-item">
+                <a href="#product-listing">PRODUCT LISTING</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- desktop nav -->
+        <nav class="header__desktop-nav">
+          <ul class="header__desktop-nav-list">
+            <li class="header__desktop-nav-item"><a href="#">HOME</a></li>
+            <li class="header__desktop-nav-item">
               <a href="#featured-products">FEATURED PRODUCTS</a>
             </li>
-            <li class="header__mobile-nav-item">
+            <li class="header__desktop-nav-item">
               <a href="#product-listing">PRODUCT LISTING</a>
             </li>
           </ul>
         </nav>
-      </aside>
 
-      <!-- desktop nav -->
-      <nav class="header__desktop-nav">
-        <ul class="header__desktop-nav-list">
-          <li class="header__desktop-nav-item"><a href="#">HOME</a></li>
-          <li class="header__desktop-nav-item">
-            <a href="#featured-products">FEATURED PRODUCTS</a>
-          </li>
-          <li class="header__desktop-nav-item">
-            <a href="#product-listing">PRODUCT LISTING</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header__desktop-user">
-        <img src="assets/icons/user.svg" />
-        FRONTEND DEVELOPER
+        <div class="header__desktop-user">
+          <img src="assets/icons/user.svg" />
+          FRONTEND DEVELOPER
+        </div>
       </div>
+
+      <!-- hero section -->
+      <section class="hero-section">
+        <img
+          class="hero-section__title-img"
+          src="assets/images/hero-title.svg"
+          alt="Hero title"
+        />
+
+        <div class="hero-section__main-img-wrapper">
+          <img
+            src="assets/images/hero/hero-800.webp"
+            srcset="
+              assets/images/hero/hero-480.webp   480w,
+              assets/images/hero/hero-800.webp   800w,
+              assets/images/hero/hero-1200.webp 1200w,
+              assets/images/hero/hero-1600.webp 1600w
+            "
+            sizes="100vw"
+            class="hero-section__main-img"
+          />
+        </div>
+      </section>
     </header>
 
-    <main>
-      <section class="hero-section"></section>
-    </main>
+    <main></main>
   </body>
 </html>
