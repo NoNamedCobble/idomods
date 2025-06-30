@@ -1,0 +1,208 @@
+*,
+*::before,
+*::after {
+  /* reset */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* variables colors */
+  --color-primary-dark: #1d1d1d;
+  --color-primary-dark-80: #1d1d1dcc;
+  --color-primary-light: #eaeae8;
+  --color-primary-white: #ffffff;
+  --color-label-purple: #d4b0d9;
+  --color-label-greenish: #d9d6b0;
+
+  /* variables for mobile */
+  --font-size-header: 32px;
+  --font-size-body-large: 18px;
+  --font-size-special-product: 8px;
+}
+
+body {
+  font-size: 16px;
+  color: var(--color-primary-dark);
+
+  padding: 0 16px 0 16px;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: var(--color-primary-dark);
+}
+
+.header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  height: 72px;
+  width: 100%;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  height: fit-content;
+  align-items: center;
+}
+
+/* icon hover animation - można byłoby po prostu wrzucić tam plain svg i zmienić fill path itd ale sądze, że
+ to bybyło dużo zamieszania, bo nie jest to kod modularny a wrzucony svg zajmuje dużo miejsca w edytorze i mogłobybyć wszystko mniej przejrzyste.  */
+.header__logo-img:hover {
+  content: url("assets/icons/forma-fill.png");
+}
+
+.header__mobile-nav-button {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.header__sidebar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+  pointer-events: none;
+}
+
+.header__sidebar--active {
+  background-color: var(--color-primary-dark-80);
+  pointer-events: auto;
+}
+
+.header__sidebar--active .header__mobile-nav {
+  transform: translateX(0);
+}
+
+.header__mobile-nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  transform: translateX(100%);
+  background-color: var(--color-primary-white);
+  height: 100%;
+  width: 290px;
+  margin-left: auto;
+  padding: 0 16px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  transition: 0.3s;
+}
+
+.header__mobile-nav-topbar {
+  padding: 24px 0 24px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+}
+
+.header__logo-desktop-tagline {
+  display: none;
+}
+
+.header__desktop-nav {
+  display: none;
+}
+
+.header__desktop-user {
+  display: none;
+}
+
+/* variables,styles for desktop */
+@media (min-width: 1200px) {
+  :root {
+    --font-size-body-large: 20px;
+    --font-size-header: 42px;
+  }
+
+  body {
+    padding: 0 42px 0 42px;
+  }
+
+  .header__mobile-nav-button {
+    display: none;
+  }
+
+  .header__sidebar {
+    display: none;
+  }
+
+  .header__logo-desktop-tagline {
+    display: inline;
+  }
+
+  .header__logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .header__desktop-nav {
+    display: block;
+  }
+
+  .header__desktop-nav-list {
+    display: flex;
+    gap: 42px;
+    list-style: none;
+  }
+
+  .header__desktop-nav-item a {
+    position: relative;
+  }
+
+  .header__desktop-nav-item a::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-primary-dark);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  .header__desktop-nav-item a:hover::before {
+    transform: scaleX(1);
+  }
+
+  .header__desktop-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
