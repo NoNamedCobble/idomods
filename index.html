@@ -6,13 +6,32 @@
     <meta name="robots" content="index, follow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"
+      defer
+    ></script>
+
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
     <title>Forma'sint</title>
+    <meta
+      name="description"
+      content="Discover premium winter jackets at forma'sint - fashionable, durable, and designed to keep you warm all season long."
+    />
+    <meta
+      name="keywords"
+      content="winter jacket brands, winter jacket for men, winter jacket for women, winter jacket long, winter jacket on sale for men, winter jacket on sale, winter jacket near me, winter jacket men, winter jacket men sale, winter jacket plus size, winter jacket sale, winter jacket women, winter jacket women sale"
+    />
   </head>
   <body>
     <!-- header -->
@@ -94,7 +113,7 @@
         </nav>
 
         <div class="header__desktop-user">
-          <img src="assets/icons/user.svg" />
+          <img src="assets/icons/user.svg" alt="User" />
           FRONTEND DEVELOPER
         </div>
       </div>
@@ -117,12 +136,167 @@
               assets/images/hero/hero-1600.webp 1600w
             "
             sizes="100vw"
+            alt="Climber on an icy slope"
             class="hero-section__main-img"
           />
         </div>
       </section>
     </header>
+    <main class="main-content">
+      <section id="featured-products" class="featured-products-section">
+        <div class="featured-products-section__heading-wrapper">
+          <span>FEATURED PRODUCTS</span>
+          <h1 class="featured-products-section__heading-title">
+            Browse featured
+          </h1>
+        </div>
+        <!-- products swiper -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- product 1 -->
+            <div class="swiper-slide">
+              <div class="swiper__card">
+                <div class="swiper__card-img-wrapper">
+                  <button class="swiper__card-favourite-button">
+                    <img
+                      src="assets/icons/favorite.svg"
+                      alt="Add to favorite"
+                      class="swiper__card-favourite-icon"
+                    />
+                  </button>
+                  <div
+                    class="swiper__card-badge swiper__card-badge--bestseller"
+                  >
+                    BESTSELLER
+                  </div>
+                  <img
+                    src="assets/images/products/product_01/product_01-268.webp"
+                    srcset="
+                      assets/images/products/product_01/product_01-268.webp 268w,
+                      assets/images/products/product_01/product_01-380.webp 380w
+                    "
+                    sizes="(max-width: 1200px) 268px, 380px"
+                    alt="Product 1"
+                  />
+                </div>
+                <div class="swiper__card-labels">
+                  <h2 class="swiper__card-header">
+                    Dark blue alpine climbing jacket
+                  </h2>
+                  <span class="swiper__card-price">€300,00 EUR</span>
+                </div>
+              </div>
+            </div>
 
-    <main></main>
+            <!-- product 2 -->
+            <div class="swiper-slide">
+              <div class="swiper__card">
+                <div class="swiper__card-img-wrapper">
+                  <button class="swiper__card-favourite-button">
+                    <img
+                      src="assets/icons/favorite.svg"
+                      alt="Add to favorite"
+                      class="swiper__card-favourite-icon"
+                    />
+                  </button>
+                  <div class="swiper__card-badge swiper__card-badge--limited">
+                    LIMITED EDITION
+                  </div>
+                  <img
+                    src="assets/images/products/product_02/product_02-268.webp"
+                    srcset="
+                      assets/images/products/product_02/product_02-268.webp 268w,
+                      assets/images/products/product_02/product_02-380.webp 380w
+                    "
+                    sizes="(max-width: 1200px) 268px, 380px"
+                    alt="Product 1"
+                  />
+                </div>
+                <div class="swiper__card-labels">
+                  <h2 class="swiper__card-header">
+                    Orange helmet for alpine TOUNDRA
+                  </h2>
+                  <span class="swiper__card-price">€300,00 EUR</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- product 3 -->
+            <div class="swiper-slide">
+              <div class="swiper__card">
+                <div class="swiper__card-img-wrapper">
+                  <button class="swiper__card-favourite-button">
+                    <img
+                      src="assets/icons/favorite.svg"
+                      alt="Add to favorite"
+                      class="swiper__card-favourite-icon"
+                    />
+                  </button>
+                  <img
+                    src="assets/images/products/product_03/product_03-268.webp"
+                    srcset="
+                      assets/images/products/product_03/product_03-268.webp 268w,
+                      assets/images/products/product_03/product_03-380.webp 380w
+                    "
+                    sizes="(max-width: 1200px) 268px, 380px"
+                    alt="Product 3"
+                  />
+                </div>
+                <div class="swiper__card-labels">
+                  <h2 class="swiper__card-header">
+                    Orange helmet for alpine TOUNDRA
+                  </h2>
+                  <span class="swiper__card-price">€300,00 EUR</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- product 4 -->
+            <div class="swiper-slide">
+              <div class="swiper__card">
+                <div class="swiper__card-img-wrapper">
+                  <button class="swiper__card-favourite-button">
+                    <img
+                      src="assets/icons/favorite.svg"
+                      alt="Add to favorite"
+                      class="swiper__card-favourite-icon"
+                    />
+                  </button>
+                  <div
+                    class="swiper__card-badge swiper__card-badge--bestseller"
+                  >
+                    BESTSELLER
+                  </div>
+                  <img
+                    src="assets/images/products/product_01/product_01-268.webp"
+                    srcset="
+                      assets/images/products/product_01/product_01-268.webp 268w,
+                      assets/images/products/product_01/product_01-380.webp 380w
+                    "
+                    sizes="(max-width: 1200px) 268px, 380px"
+                    alt="Product 1"
+                  />
+                </div>
+                <div class="swiper__card-labels">
+                  <h2 class="swiper__card-header">
+                    Dark blue alpine climbing jacket
+                  </h2>
+                  <span class="swiper__card-price">€300,00 EUR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- swiper controlls -->
+          <button class="swiper__button swiper__button--next">
+            <img
+              class="swiper__button-icon"
+              src="assets/icons/arrow-right.svg"
+              alt="Next product"
+            />
+          </button>
+        </div>
+        <div class="swiper-pagination"></div>
+      </section>
+    </main>
   </body>
 </html>
