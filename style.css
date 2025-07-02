@@ -1,17 +1,3 @@
-*,
-*::before,
-*::after {
-  /* reset */
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 :root {
   /* variables colors */
   --color-primary-dark: #1d1d1d;
@@ -27,10 +13,31 @@ html {
   --font-size-special-product: 8px;
 }
 
-body {
-  font-size: 16px;
+*,
+*::before,
+*::after {
+  /* reset */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   color: var(--color-primary-dark);
-  height: 800vh;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+body {
+  color: var(--color-primary-dark);
   padding: 0 16px 0 16px;
   margin: 0;
 }
@@ -52,7 +59,6 @@ a {
   top: 0;
   padding: 24px 0 24px 0;
   width: 100%;
-  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,7 +88,6 @@ a {
   justify-content: space-between;
   height: fit-content;
   gap: 8px;
-  font-weight: 500;
   cursor: pointer;
 }
 
@@ -183,7 +188,7 @@ a {
 }
 
 .featured-products-section {
-  padding: 36px 16px 32px 16px;
+  padding: 36px 0 32px 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -292,7 +297,7 @@ a {
 .swiper__button--next {
   right: 10px;
   top: 50%;
-  transform: translateX(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .swiper__button-icon {
@@ -309,6 +314,108 @@ a {
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
   background: var(--color-primary-dark);
   height: 100%;
+}
+
+.product-listing-section {
+  padding: 24px 0 64px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.product-listing-section__heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.product-listing-section__select {
+  border: none;
+  outline: none;
+  font-weight: 700;
+}
+
+.product-listing-section__select-option {
+  border: none;
+  outline: none;
+  font-weight: 700;
+}
+
+.product-listing-section__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  position: relative;
+  gap: 10px;
+}
+
+.product-listing-section__grid-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-primary-light);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.product-listing-section__grid-item-title {
+  position: absolute;
+}
+
+.product-listing__grid-item-img {
+  width: 100%;
+}
+
+.product-listing-section__banner {
+  position: relative;
+  grid-row: 3 / 6;
+  grid-column: 1/-1;
+  border-radius: 6px;
+  /* overflow: hidden; */
+
+  padding: 32px 24px 32px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-listing-section__banner-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border-radius: 6px;
+}
+
+.product-listing-section__banner-header {
+  text-align: center;
+}
+
+.product-listing-section__banner-title {
+  font-weight: 700;
+  font-size: var(--font-size-header);
+}
+
+.product-listing-section__banner-link {
+  background-color: var(--color-primary-white);
+  padding: 12px 48px 12px 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-listing-section__grid-scroll-trigger {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
 }
 
 /* variables,styles for desktop */
@@ -419,5 +526,31 @@ a {
   .swiper__button-icon {
     width: 24px;
     height: 24px;
+  }
+
+  .product-listing-section {
+    gap: 64px;
+  }
+
+  .product-listing-section__heading-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .product-listing-section__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .product-listing-section__grid-item {
+    padding: 32px;
+  }
+
+  .product-listing-section__banner {
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    padding: 32px 96px 32px 96px;
   }
 }
