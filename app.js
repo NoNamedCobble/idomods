@@ -9,6 +9,7 @@ document
   .querySelectorAll(".header__mobile-nav-button, .header__mobile-nav-item")
   .forEach((button) => button.addEventListener("click", () => toggleNav()));
 
+// swiper
 document.addEventListener("DOMContentLoaded", () => {
   const wrapper = document.querySelector(".swiper-wrapper");
 
@@ -37,7 +38,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-class ProductService {
+// modal
+
+const modal = document.querySelector(".modal");
+const openModal = (id, imgSrc, text) => {
+  document.querySelector(".modal__item-id").textContent = `ID:${id}`;
+
+  const modalImg = document.querySelector(".modal__img");
+  modalImg.src = imgSrc;
+  modalImg.alt = text;
+
+  modal.classList.add("modal--active");
+};
+
+const closeModal = () => {
+  modal.classList.remove("modal--active");
+};
+
+// modal listeners
+modal.addEventListener("click", () => closeModal());
+
+document.querySelector(".modal__close-button").addEventListener("click", () => closeModal());
+
+document.querySelector(".modal__container").addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
+// infinity
+class ProductInfinityScroll {
   apiUrl = "https://brandstestowy.smallhost.pl/api/random";
   gridContainer = document.querySelector(".product-listing-section__grid");
   pageSize = 14;
@@ -67,8 +95,10 @@ class ProductService {
   renderProducts = async (products) => {
     products.forEach(({ image, text, id }) => {
       const gridItem = document.createElement("button");
-      gridItem.classList.add("product-listing-section__grid-item");
 
+      gridItem.addEventListener("click", () => openModal(id, image, text));
+
+      gridItem.classList.add("product-listing-section__grid-item");
       const img = document.createElement("img");
       img.classList.add("product-listing__grid-item-img");
       img.src = image;
@@ -105,11 +135,11 @@ class ProductService {
   };
 }
 
-const productService = new ProductService();
+const productInfinityScroll = new ProductInfinityScroll();
 
 document
   .querySelector(".product-listing-section__select")
-  .addEventListener("change", (e) => productService.changePageSize(e.target.value));
+  .addEventListener("change", (e) => productInfinityScroll.changePageSize(e.target.value));
 
 const trigger = document.querySelector(".product-listing-section__grid-scroll-trigger");
 
@@ -117,7 +147,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        productService.loadNextPage();
+        productInfinityScroll.loadNextPage();
       }
     });
   },
