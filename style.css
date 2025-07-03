@@ -75,8 +75,6 @@ a {
   align-items: center;
 }
 
-/* icon hover animation - można byłoby po prostu wrzucić tam plain svg i zmienić fill path itd ale sądze, że
- to bybyło dużo zamieszania, bo nie jest to kod modularny a wrzucony svg zajmuje dużo miejsca w edytorze i mogłobybyć wszystko mniej przejrzyste.  */
 .header__logo-img:hover {
   content: url("assets/icons/forma-fill.svg");
 }
