@@ -75,8 +75,12 @@ a {
   align-items: center;
 }
 
-.header__logo-img:hover {
-  content: url("assets/icons/forma-fill.svg");
+.header__logo-img:hover .letter-path {
+  fill: var(--color-primary-white);
+}
+
+.header__logo-img:hover .background-path {
+  fill: var(--color-primary-dark);
 }
 
 .header__mobile-nav-button,
