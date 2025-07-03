@@ -19,9 +19,11 @@ const wrapper = document.querySelector(".swiper-wrapper");
 
 // duplicate existing slides
 const slides = wrapper.querySelectorAll(".swiper-slide");
-slides.forEach((slide) => {
-  const clone = slide.cloneNode(true);
-  wrapper.appendChild(clone);
+[...Array(2)].forEach(() => {
+  slides.forEach((slide) => {
+    const clone = slide.cloneNode(true);
+    wrapper.appendChild(clone);
+  });
 });
 
 const swiper = new Swiper(".swiper", {
