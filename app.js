@@ -15,32 +15,30 @@ sidebar.addEventListener("click", () => {
 document.querySelector(".header__mobile-nav").addEventListener("click", (e) => e.stopPropagation());
 
 // swiper
-document.addEventListener("DOMContentLoaded", () => {
-  const wrapper = document.querySelector(".swiper-wrapper");
+const wrapper = document.querySelector(".swiper-wrapper");
 
-  // duplicate existing slides
-  const slides = wrapper.querySelectorAll(".swiper-slide");
-  slides.forEach((slide) => {
-    const clone = slide.cloneNode(true);
-    wrapper.appendChild(clone);
-  });
+// duplicate existing slides
+const slides = wrapper.querySelectorAll(".swiper-slide");
+slides.forEach((slide) => {
+  const clone = slide.cloneNode(true);
+  wrapper.appendChild(clone);
+});
 
-  const swiper = new Swiper(".swiper", {
-    slidesPerView: "auto",
-    spaceBetween: 16,
-    loop: true,
-    scrollbar: {
-      el: ".swiper-pagination",
+const swiper = new Swiper(".swiper", {
+  slidesPerView: "auto",
+  spaceBetween: 16,
+  loop: true,
+  scrollbar: {
+    el: ".swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".swiper__button--next",
+  },
+  breakpoints: {
+    1200: {
+      spaceBetween: 24,
     },
-    navigation: {
-      nextEl: ".swiper__button--next",
-    },
-    breakpoints: {
-      1200: {
-        spaceBetween: 24,
-      },
-    },
-  });
+  },
 });
 
 // modal
