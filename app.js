@@ -49,10 +49,12 @@ const openModal = (id, imgSrc, text) => {
   modalImg.alt = text;
 
   modal.classList.add("modal--active");
+  document.body.style.overflow = "hidden";
 };
 
 const closeModal = () => {
   modal.classList.remove("modal--active");
+  document.body.style.overflow = "auto";
 };
 
 // modal listeners
