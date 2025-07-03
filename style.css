@@ -312,6 +312,7 @@ a {
   width: 100% !important;
   height: 1px !important;
   background-color: var(--color-primary-light) !important;
+  z-index: 1 !important;
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
