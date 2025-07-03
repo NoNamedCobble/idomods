@@ -1,13 +1,18 @@
 // handle toggle nav
-const toggleNav = () => {
-  const nav = document.querySelector(".header__sidebar");
-
-  nav.classList.toggle("header__sidebar--active");
+const sidebar = document.querySelector(".header__sidebar");
+const toggleSidebar = () => {
+  sidebar.classList.toggle("header__sidebar--active");
 };
 
 document
   .querySelectorAll(".header__mobile-nav-button, .header__mobile-nav-item")
-  .forEach((button) => button.addEventListener("click", () => toggleNav()));
+  .forEach((button) => button.addEventListener("click", () => toggleSidebar()));
+
+sidebar.addEventListener("click", () => {
+  sidebar.classList.remove("header__sidebar--active");
+});
+
+document.querySelector(".header__mobile-nav").addEventListener("click", (e) => e.stopPropagation());
 
 // swiper
 document.addEventListener("DOMContentLoaded", () => {
