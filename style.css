@@ -112,14 +112,14 @@ a {
 }
 
 .header__sidebar--active .header__mobile-nav {
-  transform: translateX(0);
+  transform: translateX(-100%);
 }
 
 .header__mobile-nav {
   position: absolute;
-  right: 0;
+  right: -290px;
   top: 0;
-  transform: translateX(100%);
+  transform: translateX(0);
   background-color: var(--color-primary-white);
   height: 100%;
   width: 290px;
