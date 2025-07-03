@@ -262,8 +262,8 @@ a {
   cursor: pointer;
 }
 
-.swiper__card-favourite-icon:hover {
-  content: url("assets/icons/favourite-fill.svg");
+.swiper__card-favourite-icon:hover path {
+  fill: var(--color-primary-dark);
 }
 
 .swiper__card-badge {
